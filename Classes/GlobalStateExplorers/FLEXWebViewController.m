@@ -32,7 +32,7 @@
 
 - (id)initWithText:(NSString *)text
 {
-    self = [self initWithNibName:nil bundle:nil];
+    self = [self initWithNibName:nil bundle:[NSBundle bundleForClass:self.class]];
     if (self) {
         self.originalText = text;
         NSString *htmlString = [NSString stringWithFormat:@"<head><meta name='viewport' content='initial-scale=1.0'></head><body><pre>%@</pre></body>", [FLEXUtility stringByEscapingHTMLEntitiesInString:text]];
@@ -43,7 +43,7 @@
 
 - (id)initWithURL:(NSURL *)url
 {
-    self = [self initWithNibName:nil bundle:nil];
+    self = [self initWithNibName:nil bundle:[NSBundle bundleForClass:self.class]];
     if (self) {
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [self.webView loadRequest:request];

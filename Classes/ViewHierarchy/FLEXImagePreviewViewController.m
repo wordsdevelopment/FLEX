@@ -22,7 +22,7 @@
 
 - (id)initWithImage:(UIImage *)image
 {
-    self = [super initWithNibName:nil bundle:nil];
+    self = [super initWithNibName:nil bundle:[NSBundle bundleForClass:self.class]];
     if (self) {
         self.title = @"Preview";
         self.image = image;

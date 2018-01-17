@@ -27,7 +27,7 @@
 
 - (id)initWithTarget:(id)target
 {
-    self = [super initWithNibName:nil bundle:nil];
+    self = [super initWithNibName:nil bundle:[NSBundle bundleForClass:self.class]];
     if (self) {
         self.target = target;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];

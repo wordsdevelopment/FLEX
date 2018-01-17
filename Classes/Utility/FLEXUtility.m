@@ -92,7 +92,7 @@
 
 + (NSString *)applicationImageName
 {
-    return [[NSBundle mainBundle] executablePath];
+    return [[NSBundle bundleForClass:self.class] executablePath];
 }
 
 + (NSString *)applicationName
@@ -157,7 +157,7 @@
 
 + (UIInterfaceOrientationMask)infoPlistSupportedInterfaceOrientationsMask
 {
-    NSArray *supportedOrientations = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"UISupportedInterfaceOrientations"];
+    NSArray *supportedOrientations = [[[NSBundle bundleForClass:self.class] infoDictionary] objectForKey:@"UISupportedInterfaceOrientations"];
     UIInterfaceOrientationMask supportedOrientationsMask = 0;
     if ([supportedOrientations containsObject:@"UIInterfaceOrientationPortrait"]) {
         supportedOrientationsMask |= UIInterfaceOrientationMaskPortrait;
