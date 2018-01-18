@@ -73,7 +73,7 @@ typedef NS_ENUM(NSUInteger, FLEXExplorerMode) {
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nibNameOrNil bundle:[NSBundle bundleForClass:self.class]];
     if (self) {
         self.observedViews = [NSMutableSet set];
     }
